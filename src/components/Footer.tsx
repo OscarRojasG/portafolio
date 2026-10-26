@@ -6,7 +6,7 @@ export function Footer() {
                 {/* Izquierda: Copyright y Afiliación */}
                 <div className="flex flex-col space-y-1 text-center md:text-left mb-4 md:mb-0">
                     <p className="font-medium text-foreground">
-                        © {new Date().getFullYear()} Oscar Rojas.
+                        © {new Date().getFullYear()} Oscar Francisco Rojas Gaete.
                     </p>
                     <p className="text-xs">
                         Escuela de Ingeniería Informática • PUCV

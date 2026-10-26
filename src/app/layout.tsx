@@ -17,9 +17,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://oscarrojas.cl";
+const fullName = "Oscar Francisco Rojas Gaete";
+const description =
+  "Portafolio de Oscar Francisco Rojas Gaete, investigador académico y desarrollador en la PUCV. Especializado en Machine Learning, optimización combinatoria y tecnología educativa.";
+
 export const metadata: Metadata = {
-  title: "Oscar Rojas | Portfolio",
-  description: "Investigador académico y desarrollador.",
+  metadataBase: new URL(siteUrl),
+  title: `${fullName} | Investigador y Desarrollador`,
+  description,
+  authors: [{ name: fullName, url: siteUrl }],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "profile",
+    url: siteUrl,
+    siteName: fullName,
+    title: `${fullName} | Investigador y Desarrollador`,
+    description,
+    locale: "es_CL",
+  },
+};
+
+// Datos estructurados para que los buscadores identifiquen a la persona y sus perfiles
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: fullName,
+  alternateName: "Oscar Rojas",
+  url: siteUrl,
+  email: "mailto:oscar.rojas@pucv.cl",
+  jobTitle: "Investigador académico y desarrollador",
+  affiliation: {
+    "@type": "CollegeOrUniversity",
+    name: "Pontificia Universidad Católica de Valparaíso",
+  },
+  knowsAbout: ["Machine Learning", "Optimización combinatoria", "Tecnología educativa"],
+  sameAs: [
+    "https://orcid.org/0009-0005-2555-6544",
+    "https://github.com/OscarRojasG",
+    "https://www.linkedin.com/in/oscarfranciscorojasgaete/",
+  ],
 };
 
 export default function RootLayout({
@@ -30,6 +69,12 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
