@@ -13,7 +13,7 @@ export default function Home() {
           Oscar Rojas
         </h1>
         <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-          Investigador académico y desarrollador. Especializado en Machine Learning, optimización combinatoria y videojuegos educativos.
+          Investigador académico y desarrollador. Especializado en Machine Learning, optimización combinatoria y tecnología educativa.
         </p>
 
         {/* Etiquetas actualizadas según los proyectos destacados */}
@@ -22,7 +22,7 @@ export default function Home() {
           <Badge variant="secondary">LLMs</Badge>
           <Badge variant="secondary">Optimización</Badge>
           <Badge variant="secondary">Game Dev</Badge>
-          <Badge variant="secondary">Educación</Badge>
+          <Badge variant="secondary">EdTech</Badge>
         </div>
       </section>
 
@@ -140,7 +140,7 @@ export default function Home() {
               <div className="flex flex-col gap-2">
 
                 {/* Correo con Icono Acentuado */}
-                <a href="mailto:tu.correo@pucv.cl" className="flex items-center group p-2 rounded-xl hover:bg-muted/50 transition-colors">
+                <a href="mailto:oscar.rojas@pucv.cl" className="flex items-center group p-2 rounded-xl hover:bg-muted/50 transition-colors">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-200">
                     <Mail className="w-6 h-6" />
                   </div>
